@@ -1,0 +1,97 @@
+debug: false
+updater: false
+update-notification: true
+operator-bypass: false
+list-messaging: false
+clear-command-list: false
+clean-command-list: false
+removed-commands:
+  - about
+  - ver
+  - '?'
+  - version
+  - icanhasbukkit
+  - pl
+  - plugins
+  - bukkit:pl
+  - bukkit:plugins
+  - bukkit:ver
+  - bukkit:version
+  - bukkit:?
+  - bukkit:about
+  - bukkit:help
+# Attiva/Disattiva il blocco dei comandi
+string-command-protection: false
+# Messaggio per i comandi stringa
+string-command-blocked: "&cQuesto comando è stato bloccato!"
+# String commands, questi comandi vengono bloccati anche se non sono nella lista dei comandi
+string-commands:
+  - /spigot
+  - /essentials
+  - /pex
+# Enable/Disable console only commands
+console-only-commands: false
+# Messaggi solo da console
+console-only-message: "&cQuesto comando può essere usato solo da console"
+# Comandi solo da console
+console-commands:
+  - /op
+  - /deop
+  - /stop
+# Block all commands from specific plugins?
+# This feature may not work on all plugins due to they register commands differently
+block-plugin-commands: false
+# Blocked/removed command message
+blocked-command-message: "&cQuesto comando è stato bloccato!"
+# Lista dei plugin da bloccare
+plugins:
+  - LuckPerms
+  - WorldGuard
+##########################
+# Messaggi generali qua  #
+##########################
+nopermission: "&cNon hai il permesso!"
+# Questa è la lista dei messaggi per la lista dei plugin
+# Puoi aggiungere altri messaggi per altri plugin
+# Per esempio, se vuoi aggiungere un messaggio per il plugin "Essentials" devi aggiungere:
+#   essentials: 'Plugins (3): &aPlugins&f, &a100%&f, &aCustom'
+#   ess: 'Plugins (3): &aPlugins&f, &a100%&f, &aCustom'
+#   bukkit:ess: 'Plugins (3): &aPlugins&f, &a100%&f, &aCustom'
+messages:
+  plugins: 'Plugins (3): &aPlugins&f, &a100%&f, &aCustom'
+  pl: 'Plugins (3): &aPlugins&f, &a100%&f, &aCustom'
+  iCanHasBukkit: 'Plugins (3): &aPlugins&f, &a100%&f, &aCustom'
+  about: 'Plugins (3): &aPlugins&f, &a100%&f, &aCustom'
+  version: 'Plugins (3): &aPlugins&f, &a100%&f, &aCustom'
+  ver: 'Plugins (3): &aPlugins&f, &a100%&f, &aCustom'
+  '?': 'Plugins (3): &aPlugins&f, &a100%&f, &aCustom'
+# Questa è la lista dei messaggi per la lista dei plugin
+list-messages:
+  plugins:
+    - '&aPlugins'
+    - '&a100%'
+    - '&aCustom'
+  pl:
+    - '&aPlugins'
+    - '&a100%'
+    - '&aCustom'
+  iCanHasBukkit:
+    - '&aPlugins'
+    - '&a100%'
+    - '&aCustom'
+  about:
+    - '&aPlugins'
+    - '&a100%'
+    - '&aCustom'
+  version:
+    - '&aPlugins'
+    - '&a100%'
+    - '&aCustom'
+  ver:
+    - '&aPlugins'
+    - '&a100%'
+    - '&aCustom'
+  '?':
+    - '&aPlugins'
+    - '&a100%'
+    - '&aCustom'

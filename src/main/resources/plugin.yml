@@ -1,0 +1,21 @@
+name: PluginHider
+version: '${project.version}'
+main: org.quindici.pluginhider.PluginHider
+api-version: 1.19
+author: Quindicii
+description: Blocca i player dal vedere i tuoi plufin.
+load: POSTWORLD
+depend: [ ProtocolLib ]
+softdepend:
+  - ProtocolLib
+commands:
+  pluginmenu:
+    usage: /pluginmenu
+    aliases: [noplm, plmenu]
+    description: Apre il menù dei plugin.
+  phreload:
+    usage: /npreload
+    description: Ricarica il plugin.
+  pluginlist:
+    usage: /pluginlist
+    description: Mostra la lista dei plugin.

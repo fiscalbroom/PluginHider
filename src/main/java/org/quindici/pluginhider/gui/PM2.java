@@ -1,0 +1,84 @@
+package org.quindici.pluginhider.gui;
+
+import org.quindici.pluginhider.ui.Menu;
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.plugin.Plugin;
+import org.quindici.pluginhider.utils.ItemBuilder;
+
+import java.util.Iterator;
+
+public class PM2 extends org.quindici.pluginhider.ui.Menu {
+    public PM2() {
+        super(54, "Plugins Menu Page 2");
+        this.createGUI();
+        this.setItem(53, (new org.quindici.pluginhider.utils.ItemBuilder(Material.PAPER)).setTitle("§aNext Page").build(), (player, itemStack, type) -> {
+            PM3 m = new PM3();
+            m.open(player);
+        });
+        this.setItem(45, (new org.quindici.pluginhider.utils.ItemBuilder(Material.PAPER)).setTitle("§aPrevious Page").build(), (player, itemStack, type) -> {
+            PM1 m = new PM1();
+            m.open(player);
+        });
+    }
+
+    private void createGUI() {
+        int slot = 0;
+        int plugin = Bukkit.getPluginManager().getPlugins().length;
+
+        for(int i = 45; i < plugin && slot != 45; ++i) {
+            Plugin plugins = Bukkit.getPluginManager().getPlugins()[i];
+            String version = plugins.getDescription().getVersion();
+            String website;
+            if (plugins.getDescription().getWebsite() == null) {
+                website = "Nessun sito web.";
+            } else {
+                website = plugins.getDescription().getWebsite();
+            }
+
+            String authors;
+            Iterator var10;
+            String s;
+            if (plugins.getDescription().getAuthors().isEmpty()) {
+                authors = "Nessun autore trovato.";
+            } else {
+                authors = "";
+
+                for(var10 = plugins.getDescription().getAuthors().iterator(); var10.hasNext(); authors = authors + "§7, §a" + s) {
+                    s = (String)var10.next();
+                }
+            }
+
+            String dependencies;
+            if (plugins.getDescription().getDepend().isEmpty()) {
+                dependencies = "Nessuna dipendenza trovata.";
+            } else {
+                dependencies = "";
+
+                for(var10 = plugins.getDescription().getDepend().iterator(); var10.hasNext(); dependencies = dependencies + "§7, §a" + s) {
+                    s = (String)var10.next();
+                }
+            }
+
+            String softdependencies;
+            if (plugins.getDescription().getSoftDepend().isEmpty()) {
+                softdependencies = "Nessuna dipendenza soft trovata.";
+            } else {
+                softdependencies = "";
+
+                for(var10 = plugins.getDescription().getSoftDepend().iterator(); var10.hasNext(); softdependencies = softdependencies + "§7, §a" + s) {
+                    s = (String)var10.next();
+                }
+            }
+
+            if (plugins.isEnabled()) {
+                this.setItem(slot, (new org.quindici.pluginhider.utils.ItemBuilder(Material.BOOK)).setTitle("§a" + plugins.getName()).setLore(new String[]{"§7Autore: §a" + authors.replaceFirst(", ", ""), "§7Versione: §a" + version, "§7Dipendenze: §a" + dependencies.replaceFirst(", ", ""), "§7Dipendenze leggere: §a" + softdependencies.replaceFirst(", ", ""), "§7Sito web: §a" + website}).build());
+            } else {
+                this.setItem(slot, (new ItemBuilder(Material.BOOK)).setTitle("§c" + plugins.getName()).setLore(new String[]{"§7Autore: §a" + plugins.getDescription().getAuthors().toString(), "§7Versione: §a" + plugins.getDescription().getVersion(), "§7Dipendenze: §a" + plugins.getDescription().getDepend(), "§7Dipendenze leggere: §a" + plugins.getDescription().getSoftDepend(), "§7Sito web: §a" + plugins.getDescription().getWebsite()}).build());
+            }
+
+            ++slot;
+        }
+
+    }
+}
