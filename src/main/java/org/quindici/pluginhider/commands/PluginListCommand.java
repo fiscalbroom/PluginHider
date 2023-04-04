@@ -1,7 +1,6 @@
 package org.quindici.pluginhider.commands;
 
-
-import me.xanium.noplugin.utils.UtilMessage;
+import org.quindici.pluginhider.utils.UtilMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

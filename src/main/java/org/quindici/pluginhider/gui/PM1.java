@@ -1,11 +1,10 @@
 package org.quindici.pluginhider.gui;
 
-import me.xanium.noplugin.gui.PM2;
-import me.xanium.noplugin.ui.Menu;
-import me.xanium.noplugin.utils.ItemBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.plugin.Plugin;
+import org.quindici.pluginhider.ui.Menu;
+import org.quindici.pluginhider.utils.ItemBuilder;
 
 import java.util.Iterator;
 

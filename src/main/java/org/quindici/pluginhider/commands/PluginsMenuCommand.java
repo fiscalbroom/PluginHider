@@ -1,7 +1,6 @@
 package org.quindici.pluginhider.commands;
 
-import me.xanium.noplugin.gui.PM1;
-import me.xanium.noplugin.utils.UtilMessage;
+import org.quindici.pluginhider.utils.UtilMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.help.HelpTopic;
 import org.quindici.pluginhider.PluginHider;
+import org.quindici.pluginhider.gui.PM1;
 
 import java.util.Iterator;
 
